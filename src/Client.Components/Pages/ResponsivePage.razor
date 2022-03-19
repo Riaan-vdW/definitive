@@ -1,0 +1,59 @@
+﻿@page "/responsive"
+
+<h3>Responsive Component Page</h3>
+
+<h3 class="prose dark:prose-invert">Current Size : @_responsive.Breakpoint.Description()</h3>
+
+@switch (_responsive.Breakpoint)
+{
+    case Breakpoint.MobilePortrait:
+        <div class='w-60 h-60 bg-gray-300'>
+            Blazor - Mobile Portrait (0) 360 x 740
+        </div>
+        break;
+
+    case Breakpoint.MobileLandscape:
+        <div class='w-60 h-60 bg-red-300'>
+            Blazor - Mobile Portrait (640) 740 x 360
+        </div>
+        break;
+
+    case Breakpoint.TabletPortrait:
+        <div class='w-60 h-60 bg-blue-300'>
+            Blazor - Tablet Portrait (768) 800 x 1200
+        </div>
+        break;
+
+    case Breakpoint.TabletLandscape:
+        <div class='w-60 h-60 bg-yellow-300'>
+            Blazor - Tablet Landscape (1024) 1200 x 800
+        </div>
+        break;
+
+    case Breakpoint.Laptop:
+        <div class='w-60 h-60 bg-green-300'>
+            Blazor - Laptop (1280) 1366 x 768
+        </div>
+        break;
+
+    case Breakpoint.Desktop:
+        <div class='w-60 h-60 bg-purple-300'>
+            Blazor - Desktop (1536) 2560 x 1440
+        </div>
+        break;
+}
+
+<div class='w-60 h-60 bg-gray-300 sm:bg-red-300 md:bg-blue-300 lg:bg-yellow-300 xl:bg-green-300 2xl:bg-purple-300'>
+            
+    <p>Tailwind</p>                
+    <p>sm - red</p>
+    <p>md - blue</p>
+    <p>lg - yellow</p>
+    <p>xl - green</p>
+    <p>2xl - purple</p>
+</div>
+
+@code {
+    [CascadingParameter(Name = "responsive")]
+    private Responsive _responsive { get; set; } = default!;
+}
