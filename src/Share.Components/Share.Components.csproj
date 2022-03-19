@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <ProjectReference Include="..\Share.Core\Share.Core.csproj" />
   </ItemGroup>
 
 </Project>
