@@ -1,9 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<Target Name="TailwindBuild" BeforeTargets="Compile">
+		<Exec Command="..\..\lib\tailwindcss-windows-x64 -i .\tailwind.input.css -o .\wwwroot\tailwind.css tailwindbuild:dev" Condition=" '$(Configuration)' == 'Debug' " />
+	</Target>
+
+	<Target Name="TailwindBuildWatch" AfterTargets="TailwindBuild">
+		<Exec Command="..\..\lib\tailwindcss-windows-x64 -i .\tailwind.input.css -o .\wwwroot\tailwind.css --watch tailwindtuildtatch:dev" Condition=" '$(Configuration)' == 'Debug' " />
+	</Target>
 
 </Project>

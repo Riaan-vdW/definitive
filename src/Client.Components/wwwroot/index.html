@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Client.Components</title>
-    <base href="/" />
-    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet" />
-    <link href="Client.Components.styles.css" rel="stylesheet" />
-    <link href="manifest.json" rel="manifest" />
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body>
-    <div id="app">Loading...</div>
+        <title>Definitive Components</title>
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
-</body>
+        <base href="/" />
+        <link rel="stylesheet" href="tailwind.css">
+
+        <link rel="manifest" href="manifest.json" />
+
+        <link rel="icon" href="favicon-32x32.png" type="image/png" sizes="32x32">
+        <link rel="icon" href="favicon-16x16.png" type="image/png" sizes="16x16">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+        <link rel="apple-touch-icon" href="android-chrome-512x512.png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="android-chrome-192x192.png" sizes="192x192" />
+
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+
+    <body class="bg-gray-100 dark:bg-gray-900 overflow-hidden">
+        <div class="min-h-screen h-screen overflow-hidden" id="app">
+            <div id="splash" class="flex justify-center items-center h-screen">
+                <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="blazor-error-ui">
+            An unhandled error has occurred.
+            <a href="" class="reload">Reload</a>
+            <a class="dismiss">🗙</a>
+        </div>
+
+        <script src="_framework/blazor.webassembly.js"></script>
+        <script>navigator.serviceWorker.register('service-worker.js');</script>
+    </body>
 
 </html>
